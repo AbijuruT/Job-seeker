@@ -75,16 +75,16 @@
 @media screen and (min-width: 992px) {
   //Navbar
   #main-nav {
-    padding-top: 1px;
-    padding-bottom: 1px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     transition: padding-top 0.3s, padding-bottom 0.3s;
     .navbar-brand {
-      font-size: 2em;
+      font-size: 1.3rem;
     }
     .navbar-nav {
       .nav-item {
         .nav-link {
-          padding: 0 1.1em !important;
+          padding: 0 2.2em !important;
         }
       }
     }
