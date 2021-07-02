@@ -1,0 +1,42 @@
+#main-nav {
+  background: lighten($primary-color, $amount: 15%)/*darken($white, $amount: 3%)*/;
+  // box-shadow: 0 0 8px rgba($full-black, $alpha: 0.2);
+  .navbar-toggler {
+    font-size: 1.85rem;
+    right: 0;
+    padding: 5px;
+    color: $white/*lighten($primary-color, 11%)*/;
+    border: none;
+    outline: none;
+    @include actively-focused-on-hover;
+  }
+  .navbar-brand {
+    color: $white /*lighten($primary-color, 15%)*/;
+    font-weight: 900;
+    @include heading-font;
+    transition: 0.5s ease-in-out;
+     @include actively-focused-on-hover;
+  }
+  .navbar-nav {
+    .nav-item {
+      //   margin-bottom: 1.5rem;
+      .nav-link {
+        font-size: .90rem;
+        font-weight: 500;
+        padding: 0.9rem;
+        letter-spacing: .1px;
+        color: darken($white, $amount: 6%);
+        transition: 0.5s ease-out;
+        @include heading-font;
+        &:hover{
+            color: $white;
+            font-weight: 600;
+        }
+        &.active{
+            color: $white;
+            font-weight: 600;
+        }
+      }
+    }
+  }
+}
