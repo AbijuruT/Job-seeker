@@ -84,7 +84,7 @@ textarea{
     padding: 0 .25rem;
     background-color: $white;
     color: $gray-500;
-    font-size: 1rem;
+    font-size: .80rem;
     transition: .3s;
 }
 /*======= INPUT ON FOCUS MOVE UP LABEL ie. Username  ======*/
@@ -92,7 +92,7 @@ textarea{
     top: -.5rem;
     left: .8rem;
     color: #1A73EB;
-    font-size: .75rem;
+    font-size: .70rem;
     font-weight: 600;
     z-index: 10;
 }

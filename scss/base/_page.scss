@@ -1,6 +1,6 @@
 body{
     @include body-font;
-    background: $white/*darken($white, $amount: 3%)*/;
+    background: darken($white, $amount: 13%);
 }
 img{
     width: 100%;
