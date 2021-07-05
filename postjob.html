@@ -48,7 +48,7 @@
                 <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3">
                     <p class="bold">Post Job</p>
                     <p class="title bold small">Company Details</p>
-                    <p class="text-dark small">Your Company's name, Location, Contact information + Username and Password for Login</p>
+                    <p class="text-dark small">Your Company's name and Category, Location, Contact information + Username and Password for Login</p>
                 </div>
                 <div class="col-xs-12 col-md-12 col-lg-9 col-xl-9">
                     <div class="card shadow-none " id="form">
@@ -60,6 +60,35 @@
                                             <div class="form__div">
                                                 <input type="text" class="form__input" name="company_name" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" autofocus required>
                                                 <label for="" class="form__label">Company name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 ">
+                                            <div class="form__div">
+                                                <input type="text" class="form__input" name="company_category" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" autofocus required>
+                                                <label for="" class="form__label">Category of your company</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 ">
+                                            <div class="form__div">
+                                                <input type="text" class="form__input" name="title" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" autofocus required>
+                                                <label for="" class="form__label">Title or Job postion</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="row">
+                                        <div class="col-md-6 ">
+                                            <div class="form__div">
+                                                <input type="text" class="form__input" name="phone_number" placeholder=" " pattern="[0-9]+" minlength="10" maxlength="10" title="Please enter number only" required>
+                                                <label for="" class="form__label">Phone number</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 ">
+                                            <div class="form__div">
+                                                <input type="email" class="form__input" name="email_address" placeholder=" ">
+                                                <label for="" class="form__label">Email address</label>
                                             </div>
                                         </div>
                                     </div>
@@ -80,20 +109,6 @@
                                             <div class="form__div">
                                                 <input type="text" class="form__input" name="sector" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
                                                 <label for="" class="form__label">Sector</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 ">
-                                            <div class="form__div">
-                                                <input type="text" class="form__input" name="phone_number" placeholder=" " pattern="[0-9]+" minlength="10" maxlength="10" title="Please enter number only" required>
-                                                <label for="" class="form__label">Phone number</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 ">
-                                            <div class="form__div">
-                                                <input type="email" class="form__input" name="email_address" placeholder=" ">
-                                                <label for="" class="form__label">Email address</label>
                                             </div>
                                         </div>
                                     </div>
