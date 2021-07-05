@@ -1,3 +1,8 @@
+<?php
+// session_start();
+include_once('./server/config/conn.php');
+include_once('./server/server.post_job.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,13 +35,13 @@
                             <a class="nav-link" href="#">How it works</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="findjob.html">Find Job</a>
+                            <a class="nav-link" href="findjob.php">Find Job</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="postjob.html">Post Job</a>
+                            <a class="nav-link active" href="postjob.php">Post Job</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login</a>
+                            <a class="nav-link" href="login.php">Login</a>
                         </li>
                     </ul>
                 </div>
@@ -46,40 +51,69 @@
             <!-- Company details -->
             <div class="row mb-3">
                 <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3">
-                    <p class="bold">Find Job</p>
-                    <p class="title bold small">Tell us more about you,</p>
-                    <p class="text-dark small">Your Full Name, where you're looking for a job, Postion and CV + Username and Password for Login</p>
+                    <p class="bold">Post Job</p>
+                    <p class="title bold small">Company Details</p>
+                    <p class="text-dark small">Your Company's name and Category, Location, Contact information + Username and Password for Login</p>
                 </div>
                 <div class="col-xs-12 col-md-12 col-lg-9 col-xl-9">
                     <div class="card shadow-none " id="form">
                         <div class="card-body p-0">
                             <div class="p-5">
-                                <form action="#">
+                                <form action="<?php echo (htmlspecialchars($_SERVER['PHP_SELF'])); ?>" method="POST">
                                     <div class="row">
-                                        <div class="col-md-6 ">
+                                        <div class="col-md-12 ">
                                             <div class="form__div">
-                                                <input type="text" class="form__input" name="full_name" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" autofocus required>
-                                                <label for="" class="form__label">Full name</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 ">
-                                            <div class="form__div">
-                                                <input type="text" class="form__input" name="phone_number" placeholder=" " pattern="[0-9]+" minlength="10" maxlength="10" title="Please enter number only" required>
-                                                <label for="" class="form__label">Phone number</label>
+                                                <input type="text" class="form__input" name="company_name" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" autofocus required>
+                                                <label for="" class="form__label">Company name</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 ">
                                             <div class="form__div">
-                                                <input type="text" class="form__input" name="sector" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" autofocus required>
-                                                <label for="" class="form__label">Type of job</label>
+                                                <input type="text" class="form__input" name="company_category" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
+                                                <label for="" class="form__label">Category of your company</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6 ">
                                             <div class="form__div">
-                                                <input type="text" class="form__input" name="title" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" autofocus required>
+                                                <input type="text" class="form__input" name="job_title" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
                                                 <label for="" class="form__label">Title or Job postion</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 ">
+                                            <div class="form__div">
+                                                <input type="text" class="form__input" name="phone_number" placeholder=" " pattern="[0-9]+" minlength="10" maxlength="10" title="Please enter number only" required>
+                                                <label for="" class="form__label">Phone number</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 ">
+                                            <div class="form__div">
+                                                <input type="email" class="form__input" name="email_address" placeholder=" ">
+                                                <label for="" class="form__label">Email address</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 ">
+                                            <div class="form__div">
+                                                <input type="text" class="form__input" name="province" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
+                                                <label for="" class="form__label">Province</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ">
+                                            <div class="form__div">
+                                                <input type="text" class="form__input" name="district" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
+                                                <label for="" class="form__label">District</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ">
+                                            <div class="form__div">
+                                                <input type="text" class="form__input" name="sector" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
+                                                <label for="" class="form__label">Sector</label>
                                             </div>
                                         </div>
                                     </div>
@@ -98,22 +132,14 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label class="form-label text-primary small" for="customFile">Add you CV:</label><br>
-                                                <input type="file" name="cv__file" class="form-control-sm" id="customFile" />
-                                            </div>
-                                            <hr>
-                                        </div>
-                                    </div>
-                                    <div class="row">
                                         <!-- <div class="col-md-8 d-none d-lg-block"></div> -->
                                         <div class="col-md-4  text-right order-md-2 order-lg-2">
                                             <div class="form__div">
-                                                <button type="submit" name="submit" id="" class="btn btn-primary btn-md">Submit</button>
+                                                <button type="submit" name="register" id="" class="btn btn-primary btn-md btn-block">Register</button>
                                             </div>
                                         </div>
                                         <div class="col-md-8 order-md-1 order-lg-1">
+                                            <!--  -->
                                         </div>
                                     </div>
                                 </form>

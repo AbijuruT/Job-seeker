@@ -27,16 +27,16 @@
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html#howItWorks">How it works</a>
+                            <a class="nav-link" href="#">How it works</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="findjob.html">Find Job</a>
+                            <a class="nav-link" href="findjob.php">Find Job</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="postjob.html">Post Job</a>
+                            <a class="nav-link" href="postjob.php">Post Job</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="login.html">Login</a>
+                            <a class="nav-link active" href="login.php">Login</a>
                         </li>
                     </ul>
                 </div>
