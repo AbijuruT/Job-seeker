@@ -121,8 +121,8 @@ include_once('../server/logout.php');
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Names</th>
-                                                <th>Phone numbers</th>
+                                                <th>Applicant names</th>
+                                                <th>Phone</th>
                                                 <th>Job area</th>
                                                 <th>Position</th>
                                                 <th>CV Documents</th>
