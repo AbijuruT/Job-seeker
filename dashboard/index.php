@@ -130,20 +130,37 @@ include_once('../server/logout.php');
                                             </tr>
                                         </thead>
                                         <tbody>
-
-                                            <tr>
-                                                <td>1</td>
-                                                <td class="text-capitalize">Full name</td>
-                                                <td>0788665412</td>
-                                                <td class="text-capitalize">Technology</td>
-                                                <td class="text-capitalize">Programmer</td>
-                                                <td>Cv_ doc</td>
-                                                <td>
-                                                    <form method="post" action="#" style="display: inline-block">
-                                                        <button type="submit" class="btn btn-sm btn-outline-success" onclick="return confirm('Are you sure you want to download this document ')">Download</button>
-                                                    </form>
-                                                </td>
-                                            </tr>
+                                            <?php
+                                            $sql = 'SELECT * FROM jobseekers;';
+                                            $stmt = mysqli_stmt_init($db_conn);
+                                            if (!mysqli_stmt_prepare($stmt, $sql)) {
+                                                printf('Ooops!');
+                                            } else {
+                                                mysqli_stmt_execute($stmt);
+                                                $results = mysqli_stmt_get_result($stmt);
+                                                if ($results->num_rows > 0) {
+                                                    $i = 1;
+                                                    while ($row = mysqli_fetch_assoc($results)) {
+                                            ?>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td class="text-capitalize">Full name</td>
+                                                            <td>0788665412</td>
+                                                            <td class="text-capitalize">Technology</td>
+                                                            <td class="text-capitalize">Programmer</td>
+                                                            <td>Cv_ doc</td>
+                                                            <td>
+                                                                <form method="post" action="#" style="display: inline-block">
+                                                                    <button type="submit" class="btn btn-sm btn-outline-success" onclick="return confirm('Are you sure you want to download this document ')">Download</button>
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                            <?php
+                                                        $i++;
+                                                    }
+                                                }
+                                            }
+                                            ?>
                                         </tbody>
                                         <!-- <tfoot>
                                         <th>#</th>
