@@ -103,7 +103,7 @@ include_once('../server/logout.php');
                     <div class="d-none d-lg-block align-items-center justify-content-between my-4">
                         <h1 class="h3 mb-0 text-gray-400 text-uppercase font-weight-bold">Job seeker</h1>
                     </div>
-                    
+
                 </nav>
                 <!-- End of Topbar -->
 
@@ -112,7 +112,54 @@ include_once('../server/logout.php');
                     <!-- Content Row -->
                     <div class="row">
                         <!-- Add content -->
-                        <p class="title">Under construction</p>
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Job Applications</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Names</th>
+                                                <th>Phone</th>
+                                                <th>Job area</th>
+                                                <th>Position</th>
+                                                <th>CV</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+                                                <td>1</td>
+                                                <td class="text-capitalize">Full name</td>
+                                                <td>0788665412</td>
+                                                <td>fullname@gmail.com</td>
+                                                <td class="text-capitalize">Technology</td>
+                                                <td class="text-capitalize">Programmer</td>
+                                                <td>
+                                                    <form method="post" action="#" style="display: inline-block">
+                                                        <input type="hidden" name="user_id" value="<?php echo $row['Id'] ?>" />
+                                                        <button type="submit" class="btn btn-sm btn-outline-success" onclick="return confirm('Are you sure you want to download this document ')">Download</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                        <!-- <tfoot>
+                                        <th>#</th>
+                                        <th>Names</th>
+                                        <th>Phone</th>
+                                        <th>Email</th>
+                                        <th>Position</th>
+                                        <th>Action</th>
+                                    </tfoot> -->
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
