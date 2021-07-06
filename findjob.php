@@ -83,7 +83,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <!-- Field for username and password -->
+                                    <!-- <div class="row">
                                         <div class="col-md-6 ">
                                             <div class="form__div">
                                                 <input type="text" class="form__input" name="username" id="user__name" placeholder=" " required>
@@ -96,7 +97,7 @@
                                                 <label for="" class="form__label">Password</label>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">

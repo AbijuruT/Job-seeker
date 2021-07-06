@@ -1,3 +1,8 @@
+<?php
+session_start();
+include_once('./server/config/conn.php');
+include_once('./server/server.login.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,17 +48,25 @@
             </div>
         </nav>
         <div class="form__container p-lg-5">
-            <form action="#" class="form bg-white" method="POST">
+
+            <form class="form bg-white" action="<?php echo (htmlspecialchars($_SERVER['PHP_SELF'])); ?>" method="POST">
+                <div class="text-center">
+                    <?php
+                    if (isset($_GET['incorrect_inputs'])) {
+                        echo ('<h1 class="h4 mb-4 text-danger small bold">Access Denied!</h1>');
+                    }
+                    ?>
+                </div>
                 <div class="form__div">
                     <input type="text" class="form__input" placeholder=" " name="username" required autofocus>
                     <label for="" class="form__label">Username</label>
                 </div>
-        
+
                 <div class="form__div">
                     <input type="password" class="form__input" placeholder=" " name="password" required>
                     <label for="" class="form__label">Password</label>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-md-6  text-right order-md-2 order-lg-2">
                         <div class="form__div">

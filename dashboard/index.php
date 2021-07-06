@@ -1,10 +1,10 @@
 <?php
-// session_start();
-// include_once('../server/config/conn.php');
-// if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
-//     header("Location:../login.php/");
-//     exit();
-// }
+session_start();
+include_once('../server/config/conn.php');
+if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
+    header("Location:../login.php");
+    exit();
+}
 include_once('../server/logout.php');
 ?>
 
