@@ -144,11 +144,11 @@ include_once('../server/logout.php');
                                             ?>
                                                         <tr>
                                                             <td>1</td>
-                                                            <td class="text-capitalize">Full name</td>
-                                                            <td>0788665412</td>
-                                                            <td class="text-capitalize">Technology</td>
-                                                            <td class="text-capitalize">Programmer</td>
-                                                            <td>Cv_ doc</td>
+                                                            <td class="text-capitalize"><?php echo ($row['full_name']) ?></td>
+                                                            <td><?php echo ($row['phone_numb']) ?></td>
+                                                            <td class="text-capitalize"><?php echo ($row['job_area']) ?></td>
+                                                            <td class="text-capitalize"><?php echo ($row['job_title']) ?></td>
+                                                            <td><?php echo ($row['cv_files']) ?></td>
                                                             <td>
                                                                 <form method="post" action="#" style="display: inline-block">
                                                                     <button type="submit" class="btn btn-sm btn-outline-success" onclick="return confirm('Are you sure you want to download this document ')">Download</button>

@@ -1,3 +1,7 @@
+<?php
+include_once('./server/config/conn.php');
+include_once('./server/server.find_job.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -102,7 +106,7 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label class="form-label text-primary small" for="customFile">Add you CV: <span class="text-danger">File must be <i class='bx bxs-file-doc'></i>DOC file or <i class='bx bxs-file-pdf'></i>PDF file and not bigger than 5MBs</span></label><br>
-                                                <input type="file" name="cv__file" class="form-control-sm" id="customFile" />
+                                                <input type="file" name="cv_file" class="form-control-sm" id="customFile" />
                                             </div>
                                             <hr>
                                         </div>
