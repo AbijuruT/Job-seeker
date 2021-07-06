@@ -136,9 +136,9 @@ include_once('../server/logout.php');
                                                 <td>1</td>
                                                 <td class="text-capitalize">Full name</td>
                                                 <td>0788665412</td>
-                                                <td>fullname@gmail.com</td>
                                                 <td class="text-capitalize">Technology</td>
                                                 <td class="text-capitalize">Programmer</td>
+                                                <td>Cv_ doc</td>
                                                 <td>
                                                     <form method="post" action="#" style="display: inline-block">
                                                         <input type="hidden" name="user_id" value="<?php echo $row['Id'] ?>" />
@@ -146,7 +146,6 @@ include_once('../server/logout.php');
                                                     </form>
                                                 </td>
                                             </tr>
-
                                         </tbody>
                                         <!-- <tfoot>
                                         <th>#</th>
@@ -194,6 +193,7 @@ include_once('../server/logout.php');
     <script src="../vendor/jquery-easing/jquery.easing.min.js" difer></script>
     <script src="../vendor/datatables/jquery.dataTables.min.js" difer></script>
     <script src="../vendor/datatables/dataTables.bootstrap4.min.js" difer></script>
+    <script src="../dist/js/datatables-demo.js" difer></script>
     <!-- Custom scripts for all pages-->
     <script src="../dist/js/dashboard.min.js" difer></script>
 
