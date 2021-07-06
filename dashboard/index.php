@@ -70,21 +70,20 @@ include_once('../server/logout.php');
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="#"><i class="bx bx-user-plus"></i>Profile</a>
-
+                        <a class="collapse-item" href="#" data-toggle="modal" data-target="#logout">
+                            <i class="bx bx-chevron-left-circle mr-2 "></i>
+                            Logout
+                        </a>
                     </div>
                 </div>
             </li>
             <hr class="sidebar-divider">
-
-
-
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <a href="#" id="sidebarToggle"><i class="bx bx-chevron-left"></i></a>
             </div>
         </ul>
         <!-- End of Sidebar -->
-
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -101,7 +100,7 @@ include_once('../server/logout.php');
 
                     <!-- Page Heading -->
                     <div class="d-none d-lg-block align-items-center justify-content-between my-4">
-                        <h1 class="h3 mb-0 text-gray-400 text-uppercase font-weight-bold">Job seeker</h1>
+                        <h1 class="h3 mb-0 text-gray-400 text-uppercase font-weight-bold"></h1>
                     </div>
 
                 </nav>
@@ -123,10 +122,10 @@ include_once('../server/logout.php');
                                             <tr>
                                                 <th>#</th>
                                                 <th>Names</th>
-                                                <th>Phone</th>
+                                                <th>Phone numbers</th>
                                                 <th>Job area</th>
                                                 <th>Position</th>
-                                                <th>CV</th>
+                                                <th>CV Documents</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -141,7 +140,6 @@ include_once('../server/logout.php');
                                                 <td>Cv_ doc</td>
                                                 <td>
                                                     <form method="post" action="#" style="display: inline-block">
-                                                        <input type="hidden" name="user_id" value="<?php echo $row['Id'] ?>" />
                                                         <button type="submit" class="btn btn-sm btn-outline-success" onclick="return confirm('Are you sure you want to download this document ')">Download</button>
                                                     </form>
                                                 </td>
@@ -197,6 +195,21 @@ include_once('../server/logout.php');
     <!-- Custom scripts for all pages-->
     <script src="../dist/js/dashboard.min.js" difer></script>
 
+
+    <!-- Model for logout comfirmation-->
+    <div class="modal fade" id="logout">
+        <div class="modal-dialog">
+            <div class="modal-content text-justified">
+                <div class="modal-body">
+                    Are sure you want to logout?
+                    <div class="d-block mt-3">
+                        <button type="button" class="btn btn-success mr-5" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-danger" href="../dashboard/?logout" role="button">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
