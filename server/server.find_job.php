@@ -10,33 +10,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cv_file = $_FILES['cv_file']['name'];
     $file_ext = pathinfo($cv_file, PATHINFO_EXTENSION);
     $allowed_ext = array('doc', 'pdf', 'docx');
-    // Ver
+    $fileTmpName = $_FILES["cv_file"]["tmp_name"];
+    #File size
     $maxsize = 5 * 1024 * 1024;
-    if (empty($cv_file)) {
-        echo("<script>alert('Please add your CV');</script>");
-    }
+    #file uploads folder
+    $uploadPath = "uploads/" . $cv_file;
+    
+    #checking point
     if($_FILES['cv_file']['size'] <= 0 || $_FILES['cv_file']['size'] > $maxsize){
         echo ("<script>alert('This file size is not allowed');</script>");
+        
     } 
-    if(!in_array($file_ext,$allowed_ext)){
+    else if(!in_array($file_ext,$allowed_ext)){
         echo "<script>alert('Only PDF and DOC file format allowed');</script>";
+        
     }
-    else {
+    else{
         #--- preparing the query
         $sql = "INSERT INTO jobseekers(full_name,phone_numb,job_area,job_title,cv_files) VALUES(?,?,?,?,?);";
         $stmt = mysqli_stmt_init($db_conn); //prepare statement
-        move_uploaded_file($_FILES["cv_file"]["tmp_name"], "../uploads" . $cv_file);
         
         if (!mysqli_stmt_prepare($stmt, $sql)) { // check if is prepared
             echo ("Something missing");
         } else {
             mysqli_stmt_bind_param($stmt, 'sssss', $full_name, $phone_number, $job_area, $job_title,$cv_file);
             mysqli_stmt_execute($stmt);
+            move_uploaded_file($fileTmpName, $uploadPath);
             echo ("<script>
                 window.alert('Your submition has been received successfully.');
                 window.location.href='./index.html'; 
                 </script>");
-            exit;
+            exit();
         }
     }
+    // else {
+    //     echo ("<script>alert('Ooops! something went wrong');</script>");
+    //     exit();
+    // }
 }

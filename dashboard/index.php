@@ -131,7 +131,7 @@ include_once('../server/logout.php');
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $sql = 'SELECT * FROM jobseekers;';
+                                            $sql = 'SELECT * FROM jobseekers ORDER BY id DESC;';
                                             $stmt = mysqli_stmt_init($db_conn);
                                             if (!mysqli_stmt_prepare($stmt, $sql)) {
                                                 printf('Ooops!');
@@ -143,16 +143,18 @@ include_once('../server/logout.php');
                                                     while ($row = mysqli_fetch_assoc($results)) {
                                             ?>
                                                         <tr>
-                                                            <td>1</td>
+                                                            <td><?php echo $i ?></td>
                                                             <td class="text-capitalize"><?php echo ($row['full_name']) ?></td>
                                                             <td><?php echo ($row['phone_numb']) ?></td>
                                                             <td class="text-capitalize"><?php echo ($row['job_area']) ?></td>
                                                             <td class="text-capitalize"><?php echo ($row['job_title']) ?></td>
                                                             <td><?php echo ($row['cv_files']) ?></td>
                                                             <td>
-                                                                <form method="post" action="#" style="display: inline-block">
+                                                                <a name="download" id="" class="btn btn-sm btn-outline-success" href="<?php echo ("../uploads/" . $row['cv_files']) ?>" role="button" download="<?php echo ($row['cv_files']) ?>">Download</a>
+                                                                <!-- <form method="post" action="../server/download.php" style="display: inline-block">
+                                                                    <input type="hidden" name="cv_id" value="Id" />
                                                                     <button type="submit" class="btn btn-sm btn-outline-success" onclick="return confirm('Are you sure you want to download this document ')">Download</button>
-                                                                </form>
+                                                                </form> -->
                                                             </td>
                                                         </tr>
                                             <?php

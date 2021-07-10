@@ -62,13 +62,13 @@ include_once('./server/server.find_job.php');
                                     <div class="row">
                                         <div class="col-md-6 ">
                                             <div class="form__div">
-                                                <input type="text" class="form__input" name="full_name" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" autofocus required>
+                                                <input type="text" class="form__input" name="full_name" value="<?php echo ($full_name); ?>" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" autofocus required>
                                                 <label for="" class="form__label">Full name</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6 ">
                                             <div class="form__div">
-                                                <input type="text" class="form__input" name="phone_number" placeholder=" " pattern="[0-9]+" minlength="10" maxlength="10" title="Please enter number only" required>
+                                                <input type="text" class="form__input" name="phone_number" value="<?php echo ($phone_number); ?>" placeholder=" " pattern="[0-9]+" minlength="10" maxlength="10" title="Please enter number only" required>
                                                 <label for="" class="form__label">Phone number</label>
                                             </div>
                                         </div>
@@ -76,13 +76,13 @@ include_once('./server/server.find_job.php');
                                     <div class="row">
                                         <div class="col-md-6 ">
                                             <div class="form__div">
-                                                <input type="text" class="form__input" name="job_area" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
+                                                <input type="text" class="form__input" name="job_area" value="<?php echo ($job_area); ?>" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
                                                 <label for="" class="form__label">Type of job</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6 ">
                                             <div class="form__div">
-                                                <input type="text" class="form__input" name="job_title" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
+                                                <input type="text" class="form__input" name="job_title" value="<?php echo ($job_title); ?>" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
                                                 <label for="" class="form__label">Title or Job postion</label>
                                             </div>
                                         </div>
@@ -106,7 +106,7 @@ include_once('./server/server.find_job.php');
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label class="form-label text-primary small" for="customFile">Add you CV: <span class="text-danger">File must be <i class='bx bxs-file-doc'></i>DOC file or <i class='bx bxs-file-pdf'></i>PDF file and not bigger than 5MBs</span></label><br>
-                                                <input type="file" name="cv_file" class="form-control-sm" id="customFile" />
+                                                <input type="file" name="cv_file" class="form-control-sm" id="customFile" required />
                                             </div>
                                             <hr>
                                         </div>

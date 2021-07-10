@@ -63,7 +63,7 @@ include_once('./server/server.post_job.php');
                                     <div class="row">
                                         <div class="col-md-12 ">
                                             <div class="form__div">
-                                                <input type="text" class="form__input" name="company_name" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" autofocus required>
+                                                <input type="text" class="form__input" name="company_name" value="<?php echo ($company_name); ?>" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" autofocus required>
                                                 <label for="" class="form__label">Company name</label>
                                             </div>
                                         </div>
@@ -71,13 +71,13 @@ include_once('./server/server.post_job.php');
                                     <div class="row">
                                         <div class="col-md-6 ">
                                             <div class="form__div">
-                                                <input type="text" class="form__input" name="company_category" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
+                                                <input type="text" class="form__input" name="company_category" value="<?php echo ($company_category); ?>" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
                                                 <label for="" class="form__label">Category of your company</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6 ">
                                             <div class="form__div">
-                                                <input type="text" class="form__input" name="job_title" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
+                                                <input type="text" class="form__input" name="job_title" placeholder=" " value="<?php echo ($job_title); ?>" pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
                                                 <label for="" class="form__label">Title or Job postion</label>
                                             </div>
                                         </div>
@@ -86,13 +86,13 @@ include_once('./server/server.post_job.php');
                                     <div class="row">
                                         <div class="col-md-6 ">
                                             <div class="form__div">
-                                                <input type="text" class="form__input" name="phone_number" placeholder=" " pattern="[0-9]+" minlength="10" maxlength="10" title="Please enter number only" required>
+                                                <input type="text" class="form__input" name="phone_number" placeholder=" " value="<?php echo ($phone_number); ?>" pattern="[0-9]+" minlength="10" maxlength="10" title="Please enter number only" required>
                                                 <label for="" class="form__label">Phone number</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6 ">
                                             <div class="form__div">
-                                                <input type="email" class="form__input" name="email_address" placeholder=" ">
+                                                <input type="email" class="form__input" name="email_address" value="<?php echo ($email_address); ?>" placeholder=" ">
                                                 <label for="" class="form__label">Email address</label>
                                             </div>
                                         </div>
@@ -100,19 +100,19 @@ include_once('./server/server.post_job.php');
                                     <div class="row">
                                         <div class="col-md-4 ">
                                             <div class="form__div">
-                                                <input type="text" class="form__input" name="province" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
+                                                <input type="text" class="form__input" name="province" placeholder=" " value="<?php echo ($province); ?>" pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
                                                 <label for="" class="form__label">Province</label>
                                             </div>
                                         </div>
                                         <div class="col-md-4 ">
                                             <div class="form__div">
-                                                <input type="text" class="form__input" name="district" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
+                                                <input type="text" class="form__input" name="district" placeholder=" " value="<?php echo ($district); ?>" pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
                                                 <label for="" class="form__label">District</label>
                                             </div>
                                         </div>
                                         <div class="col-md-4 ">
                                             <div class="form__div">
-                                                <input type="text" class="form__input" name="sector" placeholder=" " pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
+                                                <input type="text" class="form__input" name="sector" placeholder=" " value="<?php echo ($sector); ?>"  pattern="[a-zA-Z\s]+" title="Please enter letters only" required>
                                                 <label for="" class="form__label">Sector</label>
                                             </div>
                                         </div>
