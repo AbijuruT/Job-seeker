@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = mysqli_real_escape_string($db_conn, htmlspecialchars($_POST['password']));
 
     if (empty($_POST['username'])) {
-        header("Location:login.php?Warning");
+        header("Location:login.php?Warning"); 
         exit();
     }
     if (empty($_POST['password'])) {

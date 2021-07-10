@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $phone_number = mysqli_real_escape_string($db_conn, htmlspecialchars($_POST['phone_number']));
     $email_address = mysqli_real_escape_string($db_conn, htmlspecialchars($_POST['email_address']));
     $province = mysqli_real_escape_string($db_conn, htmlspecialchars($_POST['province']));
-    $district = mysqli_real_escape_string($db_conn, htmlspecialchars($_POST['district']));
+    $district = mysqli_real_escape_string($db_conn, htmlspecialchars($_POST['district'])); 
     $sector = mysqli_real_escape_string($db_conn, htmlspecialchars($_POST['sector']));
     $username = mysqli_real_escape_string($db_conn, htmlspecialchars($_POST['username']));
     $password = mysqli_real_escape_string($db_conn, htmlspecialchars($_POST['password']));
