@@ -1,5 +1,8 @@
 <?php
-
+$full_name = '';
+$phone_number = '';
+$job_area = '';
+$job_title = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $full_name = mysqli_real_escape_string($db_conn, htmlspecialchars($_POST['full_name']));
     $phone_number = mysqli_real_escape_string($db_conn, htmlspecialchars($_POST['phone_number']));

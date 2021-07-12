@@ -1,5 +1,13 @@
 <?php
-
+$company_name = '';
+$company_category = '';
+$job_title = '';
+$phone_number = '';
+$email_address = '';
+$province = '';
+$district = '';
+$sector = '';
+$username = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $company_name = mysqli_real_escape_string($db_conn, htmlspecialchars($_POST['company_name']));
     $company_category = mysqli_real_escape_string($db_conn, htmlspecialchars($_POST['company_category']));
